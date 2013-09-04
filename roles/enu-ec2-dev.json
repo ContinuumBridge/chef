@@ -1,0 +1,29 @@
+{
+  "name": "enu-ec2-dev",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[apt]",
+    "recipe[aliases]",
+    "recipe[networking_basic]",
+    "recipe[chef_handler]",
+    "recipe[dmg]",
+    "recipe[runit]",
+    "recipe[git]",
+    "recipe[build-essential::debian]",
+    "recipe[openssl]",
+    "recipe[python]",
+    "recipe[yum]",
+    "recipe[ohai]",
+    "recipe[nginx]",
+    "recipe[supervisor]",
+    "recipe[gunicorn]"
+  ],
+  "env_run_lists": {
+  }
+}
