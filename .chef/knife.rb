@@ -11,3 +11,22 @@ chef_server_url          "https://api.opscode.com/organizations/continuumbridge"
 cache_type               'BasicFile'
 cache_options( :path => "#{ENV['HOME']}/.chef/checksums" )
 cookbook_path            ["#{current_dir}/../cookbooks"]
+
+knife[:role]                  = "cb-dev"
+
+# Ubuntu 12.04 LTS 64bit:
+knife[:image]                 = "ami-f968f8c9"
+knife[:use_sudo]              = "true"
+
+# Some defaults
+knife[:region]                = "us-west-2"
+knife[:availability_zone]     = "us-west-2c"
+knife[:ssh_user]              = "ubuntu"
+knife[:name]                  = "cb-dev"
+knife[:flavor]                = "t1.micro"
+
+knife[:aws_access_key_id]  = "AKIAIYCGHZLABUBVBXRQ"
+knife[:aws_ssh_key_id] = 'cb-dev'
+knife[:aws_secret_access_key] = "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"
+
+
