@@ -31,12 +31,13 @@ else
   default['python']['prefix_dir']         = '/usr/local'
 end
 
-default['python']['binary'] = "#{python['prefix_dir']}/bin/python"
+default['python']['binary'] = "#{node['python']['prefix_dir']}/bin/python"
 
 default['python']['url'] = 'http://www.python.org/ftp/python'
 default['python']['version'] = '2.7.5'
 default['python']['checksum'] = '3b477554864e616a041ee4d7cef9849751770bc7c39adaf78a94ea145c488059'
 default['python']['configure_options'] = %W{--prefix=#{python['prefix_dir']}}
+default['python']['make_options'] = %W{install}
 
-default['python']['distribute_script_url'] = 'http://python-distribute.org/distribute_setup.py'
-default['python']['distribute_option']['download_base'] = 'https://pypi.python.org/packages/source/d/distribute/'
+default['python']['pip_location'] = "#{node['python']['prefix_dir']}/bin/pip"
+default['python']['virtualenv_location'] = "#{node['python']['prefix_dir']}/bin/virtualenv"
