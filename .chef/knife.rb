@@ -33,7 +33,8 @@ knife[:flavor]                = "t1.micro"
 
 knife[:aws_access_key_id]  = "AKIAIYCGHZLABUBVBXRQ"
 #knife[:aws_ssh_key_id] = 'cb-dev'
-knife[:aws_ssh_key_id] = 'cb-prod'
+knife[:aws_ssh_key_id] = 'cb-europe-dev'
+#knife[:aws_ssh_key_id] = 'cb-prod'
 knife[:aws_secret_access_key] = "FGvbHUny2eSQKy5vIkoEmVYzHSspbk9tFET4PN6M"
 
 
