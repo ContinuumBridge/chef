@@ -31,18 +31,25 @@ execute 'Install libpq, python-dev and python-software-properties' do
   action :run
 end
 
+include_recipe "cb-base::nodejs"
+
+execute 'Install Socat' do
+  command "sudo apt-get -y install socat"
+  action :run
+end
+
 execute 'Link up Nginx config' do
-  command "sudo ln -s /home/bridge-controller/server_files/cb_nginx.conf /etc/nginx/sites-enabled/"
+  command "sudo ln -sf /home/ubuntu/bridge-controller/server_files/cb_nginx.conf /etc/nginx/sites-enabled/"
   action :run
 end
 
 execute 'Link up Supervisord config' do
-  command "sudo ln -s /home/bridge-controller/server_files/cb_supervisord.conf /etc/supervisor.d/cb_supervisord.conf"
+  command "sudo ln -sf /home/ubuntu/bridge-controller/server_files/cb_supervisord.conf /etc/supervisor.d/cb_supervisord.conf"
   action :run
 end
 
-execute 'Link up Supervisord config' do
-  command "sudo apt-get install virtualenvwrapper"
+execute 'Install virtualenvwrapper' do
+  command "sudo apt-get install -y virtualenvwrapper"
   action :run
 end
 
