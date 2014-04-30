@@ -26,6 +26,13 @@ template ".bashrc" do
   group "ubuntu"
 end
 
+template ".bash_aliases" do
+  path "#{ENV['HOME']}/.bash_aliases"
+  source "bash_aliases"
+  owner "ubuntu"
+  group "ubuntu"
+end
+
 execute 'Install libpq, python-dev and python-software-properties' do
   command "sudo apt-get -y install libpq-dev python-dev python-software-properties"
   action :run

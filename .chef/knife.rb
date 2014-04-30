@@ -28,12 +28,13 @@ knife[:region]                = "eu-west-1"
 knife[:availability_zone]     = "eu-west-1b"
 knife[:ssh_user]              = "ubuntu"
 #knife[:name]                  = "cb-dev"
-knife[:name]                  = "cb-prod"
+knife[:name]                  = "cb-staging"
+#knife[:name]                  = "cb-prod"
 knife[:flavor]                = "t1.micro"
 
 knife[:aws_access_key_id]  = "AKIAIYCGHZLABUBVBXRQ"
 #knife[:aws_ssh_key_id] = 'cb-dev'
-knife[:aws_ssh_key_id] = 'cb-europe-dev'
+knife[:aws_ssh_key_id] = 'cb-europe-staging'
 #knife[:aws_ssh_key_id] = 'cb-prod'
 knife[:aws_secret_access_key] = "FGvbHUny2eSQKy5vIkoEmVYzHSspbk9tFET4PN6M"
 

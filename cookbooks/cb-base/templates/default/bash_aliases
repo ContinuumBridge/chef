@@ -1,0 +1,1 @@
+alias repl='socat UNIX:/tmp/node-repl.sock -'
