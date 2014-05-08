@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "precise32"
+  config.vm.box = "precise"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
@@ -107,11 +107,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # validation key to validation.pem.
   #
   config.vm.provision :chef_client do |chef|
+    chef.node_name = 'vagrant-mark'
     chef.chef_server_url = "https://api.opscode.com/organizations/continuumbridge"
     chef.validation_key_path = "./.chef/continuumbridge-validator.pem"
     chef.add_role "cb-dev"
     chef.validation_client_name = "continuumbridge-validator"
-    run_list = ['role[cb-dev]']
+    chef.run_list = ['role[cb-dev]']
   end
   #
   # If you're using the Opscode platform, your validator client is
